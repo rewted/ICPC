@@ -24,11 +24,28 @@ int find_distance_ccw(int pos, int dest) {
   }
 }
 
-int main () {
-  std::string line;
-  std::ifstream is("combo.txt");
+int main (int argv, char * argc[]) {
+  //std::string line;
+  //std::ifstream is("in.txt");
+  int init_pos = -1;
+  int comb1 = -1;
+  int comb2 = -1;
+  int comb3 = -1;
+  while (init_pos != 0 && comb1 != 0 && comb2 != 0 && comb3 != 0) {
+    std::cin >> init_pos;
+    std::cin >> comb1;
+    std::cin >> comb2;
+    std::cin >> comb3;
+    int degrees_traveled = 1080;
+    int dist_traveled = 0;
+    dist_traveled += find_distance_clock(init_pos, comb1);
+    dist_traveled += find_distance_ccw(comb1, comb2);
+    dist_traveled += find_distance_clock(comb2, comb3);
+    degrees_traveled += dist_traveled * 9;
+    std::cout << degrees_traveled << std::endl;   
+  }
 
-
+  /*
   while (getline (is, line)) {
     auto it = line.begin();
     int degrees_traveled = 1080;
@@ -76,14 +93,9 @@ int main () {
     degrees_traveled += dist_traveled * 9;
     std::cout << degrees_traveled << std::endl;
     //std::cout << "Deg: " << degrees_traveled << " Dist: " << dist_traveled << std::endl;
-    /*
-    std::cout << find_distance_clock(init_pos, comb1) << std::endl;
-    std::cout << find_distance_ccw(comb1, comb2) << std::endl;
-    std::cout << find_distance_clock(comb2, comb3) << std::endl;
-    std::cout << "--------" << std::endl;
-    */
     //std::cout << line << std::endl;
-    
+  
   }
+  */
   return 0;
 }
