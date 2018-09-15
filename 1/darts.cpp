@@ -3,7 +3,7 @@
 #include <string>
 #include <cmath>
 
-double distance_formula (int a, int b) {
+int distance_formula (int a, int b) {
   int asq = a * a;
   int bsq = b * b;
   return sqrt (asq + bsq);
