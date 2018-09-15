@@ -3,7 +3,7 @@
 #include <string>
 #include <cmath>
 
-int distance_formula (int a, int b) {
+double distance_formula (int a, int b) {
   int asq = a * a;
   int bsq = b * b;
   return sqrt (asq + bsq);
@@ -60,21 +60,16 @@ int main () {
   if (is.is_open()) {
     getline (is, line);
     cases = stoi(line);
-    while (getline (is, line)) {
-      if (cases == 0) {
-	break;
-      }
-      if (throws == 0) {
+    
+    while (cases != 0) {
+      getline(is, line);
 
+      if (throws == 0) {
 	score = 0;
 	throws = stoi(line);
       }
+      
       else {
-	throws--;
-	if (throws == 0) {
-	  std::cout << score << std::endl;
-	  cases--;
-	}
 	int pos = 0;
 	for (auto x : line) {
 	  if (x == ' ') {
@@ -89,6 +84,14 @@ int main () {
 	yd = stoi(line.substr(pos, line.size()));
 	distance = distance_formula(xd, yd);
 	score += points_scored(distance);
+	//std::cout << "Throw: " << throws << " " << "Score: " << score << std::endl;
+	throws--;
+
+	if (throws == 0) {
+	  std::cout << score << std::endl;
+	  cases--;
+	}
+
 	
       }
       //std::cout << line << std::endl;
