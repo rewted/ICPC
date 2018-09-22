@@ -36,10 +36,13 @@ int main () {
       if (dx <= 2018) {
 	int dy = abs(all_points[i].y - all_points[j].y);
 	if (dy <= 2018) {
-	  if (dx * dx + dy * dy ==  4072324) {
-	    //cout << all_points[i].x << " " << all_points[i].y << endl;
-	    //cout << all_points[j].x << " " << all_points[j].y << endl;
-	    points_2018++;
+	  if (dx + dy < 1427) {
+	    
+	    if (dx * dx + dy * dy ==  4072324) {
+	      //cout << all_points[i].x << " " << all_points[i].y << endl;
+	      //cout << all_points[j].x << " " << all_points[j].y << endl;
+	      points_2018++;
+	    }
 	  }
 	}
       }
