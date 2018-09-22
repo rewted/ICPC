@@ -2,33 +2,18 @@
 #include <vector>
 
 void find_king(std::vector<int> group) {
-  /*
-  auto gnomes_group_itr = group.begin();
-  while (gnomes_group_itr != group.end()) {
-    std::cout << *gnomes_group_itr << std::endl;
-    gnomes_group_itr++;
-  }
-  */
-  for (int i = 1; i < (int)group.size(); i++) {
-    if (group[i] > group[i+1]) {
-      if (i < (int)group.size()-2) {
-	if (group[i] < group[i+2]) {
-	  std::cout << i+2 << std::endl;
-	  break;
-	}
-	else {
-	  std::cout << i+1 << std::endl;
-	  break;
-	}
-      }
+  int prev = group[0];
+  int curr = group[1];
+  for (int i = 1; i < (int)group.size()-1; i++) {
+    curr = group[i];
+
+    if (prev+1 != curr) {
       std::cout << i+1 << std::endl;
       break;
     }
-    if (group[i] < group[i+1]  && group[i] < group[i-1]) {
-      std::cout << i+1 << std::endl;
-    }
+    
+    prev = curr;
   }
-
 }
 
 void get_gnomes (int gnome_count) {
