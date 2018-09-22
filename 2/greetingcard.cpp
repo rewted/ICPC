@@ -28,7 +28,7 @@ int main () {
       int dx = abs(all_points[i].x - all_points[j].x);
       int dy = abs(all_points[i].y - all_points[j].y);
       if ((dx <= 2018) && (dy <= 2018)) {
-	if (dx * dx + dy * dy <=  4072324) {
+	if (dx * dx + dy * dy ==  4072324) {
 	  //cout << all_points[i].x << " " << all_points[i].y << endl;
 	  //cout << all_points[j].x << " " << all_points[j].y << endl;
 	  points_2018++;
