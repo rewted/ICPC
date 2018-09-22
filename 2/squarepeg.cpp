@@ -34,7 +34,7 @@ int plots_filled_with_houses(vector<int> * plots, vector<int> * circles, vector<
   auto squares_itr = squares->begin();
   while (plots_itr != plots->end()) {
     // does house fit in plot?
-    if (find_hypot(*squares_itr) < *plots_itr) {
+    if (find_hypot(*squares_itr) <= *plots_itr) {
       plots_filled++;
       squares_itr++;
     }
