@@ -32,10 +32,10 @@ int main () {
   */
   for (int i = 0; i < number_of_points; i++) {
     for (int j = i+1; j < number_of_points; j++) {
-      int dx = all_points[i].x - all_points[j].x;
-      if (dx <= 2018 || dx >= -2018) {
-	int dy = all_points[i].y - all_points[j].y;
-	if (dy <= 2018 || dy >= -2018) {
+      int dx = abs(all_points[i].x - all_points[j].x);
+      if (dx <= 2018) {
+	int dy = abs(all_points[i].y - all_points[j].y);
+	if (dy <= 2018) {
 	  if (dx * dx + dy * dy ==  4072324) {
 	    //cout << all_points[i].x << " " << all_points[i].y << endl;
 	    //cout << all_points[j].x << " " << all_points[j].y << endl;
