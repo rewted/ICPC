@@ -7,8 +7,8 @@ using namespace std;
 
 
 struct points{
-  unsigned int x;
-  unsigned int y;
+  long int x;
+  long int y;
 }points;
 
 int main () {
