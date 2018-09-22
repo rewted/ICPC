@@ -23,7 +23,8 @@ void print_data (vector<int> * data) {
 }
 
 double find_hypot (int a) {
-  return a * sqrt(2);
+  double length = (double)a/2;
+  return sqrt(length*length + length*length);
 }
 
 int plots_filled_with_houses(vector<int> * plots, vector<int> * circles, vector<int> * squares) {
