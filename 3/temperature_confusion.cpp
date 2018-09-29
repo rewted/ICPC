@@ -36,8 +36,20 @@ int main () {
   num -= b;
   num *= 5;
   dem *= 9;
+
+
   
   int greatest_divisor = gcd(num, dem);
-  cout << num/greatest_divisor << "/" << dem/greatest_divisor << endl;
+  num /= greatest_divisor;
+  dem/= greatest_divisor;
+  if (num > 0 && dem < 0) {
+    num *= -1;
+    dem *= -1;
+  }
+  if (num < 0 && dem < 0) {
+    num *= -1;
+    dem *= -1;
+  }
+  cout << num << "/" << dem << endl;
   return 0;
 }
