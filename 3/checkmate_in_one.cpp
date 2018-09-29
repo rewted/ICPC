@@ -34,52 +34,6 @@ bool checkmate(vector<string> board) {
 
   // check if k is on the edge
   if ((ex == 0) || (ex == 7) || (ey == 0) || (ey == 7)) {
-    // corner case
-    if ((ex == 0 && ey == 0) || (ex == 0 && ey == 7) || (ex == 7 && ey == 0) || (ex == 7 && ey == 7)) {
-
-      if (abs(kx - ex) == 2) {
-	if (ky == ey) {
-	  if (abs(ry - ey) < 2) {
-	    return false;
-	  }
-	  else {
-	    return true;
-	  }
-	}
-
-	if (abs(ky-ey) == 1) {
-	  if (abs(ry - ey) < 2) {
-	    return false;
-	  }
-	  else {
-	    return true;
-	  }
-	}
-	return false;
-      }
-
-      if (abs(ky - ey) == 2) {
-	if (kx == ex) {
-	  if (abs(rx - ex) < 2) {
-	    return false;
-	  }
-	  else {
-	    return true;
-	  }
-	}
-
-	if (abs(kx - ex) == 1) {
-	  if (abs(ry - ey) < 2) {
-	    return false;
-	  }
-	  else {
-	    return true;
-	  }
-	}
-	return false;
-      }
-    }
-
     // non corner case
     if (kx == ex) {
       if (abs(ky - ey) != 2) {
@@ -100,6 +54,35 @@ bool checkmate(vector<string> board) {
       }
       return true;
     }
+
+    // corner case
+    if ((ex == 0 && ey == 0) || (ex == 0 && ey == 7) || (ex == 7 && ey == 0) || (ex == 7 && ey == 7)) {
+      if (abs(kx - ex) == 2) {
+	if (abs(ky-ey) == 1) {
+	  if (abs(ry - ey) < 2) {
+	    return false;
+	  }
+	  else {
+	    return true;
+	  }
+	}
+	return false;
+      }
+
+      if (abs(ky - ey) == 2) {
+	if (abs(kx - ex) == 1) {
+	  if (abs(ry - ey) < 2) {
+	    return false;
+	  }
+	  else {
+	    return true;
+	  }
+	}
+	return false;
+      }
+    }
+    return false;
+
     
   }
 
